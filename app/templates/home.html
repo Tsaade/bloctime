@@ -1,0 +1,26 @@
+<div class="time">
+    
+    <div class="timer">
+        <timer id="time">{{ countDown | timecode }}</timer>
+        <br />
+        <button class="start-button" ng-click="startTimer()">{{ button }}</button>
+    </div>
+    
+    <div id="sidebar">
+        <div id="widget_1">
+            <h2 class="titles">Task History:</h2>
+            <input id="text-field" type="text" ng-model="taskText" />
+            <input id="task-button" type="button" value="Add Task" ng-click="addTask()" />
+        </div>
+        
+        <div id="widget_2">
+            <h2 class="titles">Task List:</h2>            
+            <table>
+                <tr ng-repeat="task in timer_tasks | orderBy: '-taskText'">
+                    <td>{{ task.taskText }}</td>
+                </tr>                
+            </table>
+        </div>
+    </div>
+
+</div>
