@@ -3,24 +3,35 @@
     <div class="timer">
         <timer id="time">{{ countDown | timecode }}</timer>
         <br />
-        <button class="start-button" ng-click="startTimer()">{{ button }}</button>
+        <div ng-show="!isRunning">
+            <button id="start-button" ng-click="startTimer()">Start</button>
+        </div>
+        <div ng-show="isRunning">
+            <button id="stop-button" ng-click="stopTimer()">Stop</button>
+        </div>        
     </div>
     
     <div id="sidebar">
         <div id="widget_1">
-            <h2 class="titles">Task History:</h2>
+            <h2 class="titles">Enter New Task:</h2>
             <input id="text-field" type="text" ng-model="taskText" />
-            <input id="task-button" type="button" value="Add Task" ng-click="addTask()" />
+            <hr>
         </div>
         
         <div id="widget_2">
-            <h2 class="titles">Task List:</h2>            
-            <table>
-                <tr ng-repeat="task in timer_tasks | orderBy: '-taskText'">
-                    <td>{{ task.taskText }}</td>
-                </tr>                
-            </table>
+            <h2 class="titles">Task History:</h2>
+            <ul class="nav nav-pills nav-stacked" id="task-list">
+                <li ng-repeat="task in timer_tasks | orderBy: '-completed'" ng-click="setActiveTask(task)">
+                    <a href="#">{{ task.taskText }}
+                        <br />
+                        <p id="whenCompleted">Completed: {{ task.completed | date: 'medium' }}</p>
+                        <br />
+                    </a>
+                </li>                
+            </ul>
+            <hr>
+            <input id="task-button" type="button" value="Clear Tasks" ng-click="clearTasks()"/>
         </div>
     </div>
-
+    
 </div>

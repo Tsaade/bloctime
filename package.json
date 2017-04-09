@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Bloc Inc",
+  "author": "Tarek Saade",
   "license": "ISC",
   "dependencies": {
     "hapi": "~7.5.0",
