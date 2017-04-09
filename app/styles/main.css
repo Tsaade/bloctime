@@ -4,16 +4,20 @@ body {
 
 #sidebar {
     float: left;
-    height: 100%;
+    height: 1000px;
     width: 30%;
-    position: absolute;
+    position: relative;
     background-color: #D8D8D8;
     z-index: 1;
     padding-top: 25px;
 }
 
+#task-list {
+    height: auto;
+}
 .titles {
     padding-left: 15px;
+    padding-top: 20px;
 }
 
 .timer {
@@ -27,7 +31,13 @@ body {
     font-weight: 500;
 }
 
-.start-button {
+#start-button {
+    width: 150px;
+    height: 50px;
+    font-size: 34px;
+}
+
+#stop-button {
     width: 150px;
     height: 50px;
     font-size: 34px;
@@ -40,29 +50,35 @@ body {
 #text-field {
     width: 85%;
     font-size: 24px;
-    margin-left: 30px;
-    
+    margin-left: 30px;    
 }
 
 #task-button {
     float: right;
-    margin: 10px 30px 0 0;
+    margin: 10px 30px 20px 0;
     width: 100px;
     height: 35px;
 }
 
-table {
+ul {
     font-size: 18px;
     width: 100%;
-    height: 200px;
+    height: 350px;
     padding: 0;
     margin: 0;
 }
 
-td {
-    padding-left: 35px;
+li {
+    padding-left: 5px;
 }
 
-tr:nth-child(odd) {
+li:nth-child(odd) {
     background-color: #CBCBCB;
+}
+
+#whenCompleted {
+    font-size: 12px;
+    float: right;
+    text-align: left;
+    padding-right: 5px;
 }
